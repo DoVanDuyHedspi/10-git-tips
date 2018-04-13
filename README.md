@@ -60,10 +60,11 @@ có ba lựa chọn mà bạn nên biết.
 commit, tất cả nằm trên một dòng.
 - `--graph` - Tùy chọn này vẽ ra một biểu diễn đồ thị dựa trên văn bản của lịch sử ở phía bên tay trái của đầu ra. 
 Không sử dụng nếu bạn đang xem lịch sử cho một nhánh đơn.
+- `--all` - đưa ra lịch sử tất cả các nhánh.
 
 Dưới đây là những gì kết hợp các tùy chọn trông giống như
 
-![image](Dưới đây là những gì kết hợp các tùy chọn trông giống như)
+![image](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946444git-ninja-03.png)
 
 ## 5.Không bao giờ theo dõi xót một commit
 Hãy nói bạn đã commit một điều gì đó mà bạn không muốn và kết thúc bằng cách cố gắng thiết lập
@@ -80,4 +81,5 @@ Nếu tôi chạy `git log`, tôi sẽ nhận được những commit nằm tron
 
 Tuy nhiên, một `git reflog` đưa ra một commit (**b1b0ee9 – HEAD@{4}**) đã bị mất khi bạn
 cố gắng cài lại.
+![image](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946447git-ninja-05.png)
  
