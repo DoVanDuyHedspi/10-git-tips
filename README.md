@@ -1,17 +1,16 @@
-# 10 mẹo để đẩy kĩ năng git của bạn lên cấp độ 
+# 10 mẹo để nâng cao kĩ năng git của bạn lên cấp độ 
 Gần đâu chúng tôi đã phát hành hai hướng dẫn để giúp bạn làm quen với [Git căn bản](http://www.sitepoint.com/git-for-beginners/)
-và [Sử dụng git trong môi trường nhóm]. Những câu lệnh chúng ta đã bàn luận là đủ để giúp một nhà phát triển tồn tại được
-trong thế giới Git. Trong bài đăng này, chúng ta cố gắng để khám phá xem làm thế nào quản lý
+và [Sử dụng git trong môi trường phát triển phần mềm]. Những câu lệnh chúng ta đã bàn luận là đủ để giúp một nhà phát triển tồn tại được trong thế giới của Git. Trong bài viết này, chúng ta cố gắng để khám phá xem làm thế nào quản lý
 giời gian của bạn hiệu quả và tận dụng các tính năng mà git cung cấp.
 
 Chú ý: Một vài câu lệnh trong bài báo này có một phần nằm trong dấu ngoặc vuông (ví dụ `git add -p [file_name]`).
 Trong những ví dụ, bạn sẽ chèn số, định danh,.. cần thiền ở ngoài dấu ngoặc vuông.
-## 1. Git tự hoàn thiện
-Nếu bạn chạy câu lệnh Git thông qua dòng lệnh, thì đó là một nhiệm vụ mệt mỏi để gõ các lệnh
-bằng tay mỗi lần. Để giúp đỡ điều đó, bạn có thể kích hoạt tự động hoàn thành các lệnh Git trong
+## 1. Tự hoàn thành trong Git
+Nếu bạn chạy câu lệnh Git thông qua dòng lệnh, thì đó là một nhiệm vụ mệt mỏi khi gõ các lệnh
+bằng tay mỗi lần. Để giúp đỡ điều đó, bạn có thể bật tính năng tự động hoàn thành các lệnh Git trong
 vài phút.
 
-Để có được kịch bản, hãy chạy lệnh sau trong một hệ thống Unix.
+Để thực hiện việc này, hãy chạy lệnh sau trên một hệ thống Unix.
 
 ```
 cd ~
@@ -24,8 +23,8 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 ```
 Mặc dù tôi đã đề cập đến điều này trước đó, tôi không thể nhấn mạnh đủ: Nếu bạn muốn sử dụng các tính năng của Git đầy đủ,
-bạn chắc chắn nên chuyển sang giao diện dòng lệnh!
-## 2. Loại bỏ các file trong Git
+bạn chắc chắn phải chuyển sang giao diện dòng lệnh!
+## 2. Bỏ qua các file trong Git
 Bạn có mệt mỏi với những file biên dịch (giống như `.pyc`) xuất hiện trong repo Git của bạn.
 Hoặc rất chán khi bạn đã thêm nó vào Git?. Không cần tìm đâu xa, có một cách để ban có thể nói với
 Git để hoàn toàn bỏ qua những thư mục và file. Đơn giản tạo một file có tên `.gitignore` và
@@ -39,8 +38,8 @@ my_db_config/
 !main.pyc
 ```
 ## 3. Ai đã làm bẩn code của tôi?
-Bản năng của con người là đổ lỗi cho người khác khi có điều gì đó sai. Nếu máy chủ production
-bị phá vỡ, rất đơn giản để tìm thủ phạm - chỉ với `git blame`. Dòng lệnh này chỉ cho bạn tác giả
+Bản năng của con người là đổ lỗi cho người khác khi có điều gì đó bất ổn. Nếu máy chủ production
+gặp sự cố, rất đơn giản để tìm thủ phạm - chỉ với `git blame`. Dòng lệnh này chỉ cho bạn tác giả
 của tất cả dòng lệnh trong file, commit chỉ cho bạn thay đổi cuối cùng trong dòng lệnh đó, và thời
 gian của commit.
 ```
@@ -56,20 +55,18 @@ repo lớn hơn.
 ## 4. Xem lại lịch sử của Repository
 Chúng ta đã được nhìn thấy việc sử dụng `git log` trong một hướng dẫn trước, tuy nhiên,
 có ba lựa chọn mà bạn nên biết.
-- `--oneline` - nén thông tin hiển thị bên cạnh mỗi commit với một commit giảm bớt và thông điệp
-commit, tất cả nằm trên một dòng.
-- `--graph` - Tùy chọn này vẽ ra một biểu diễn đồ thị dựa trên văn bản của lịch sử ở phía bên tay trái của đầu ra. 
-Không sử dụng nếu bạn đang xem lịch sử cho một nhánh đơn.
+- `--oneline` - nén thông tin hiển thị bên cạnh mỗi commit với một commit giảm bớt và thông điệp commit, tất cả nằm trên một dòng.
+- `--graph` - Tùy chọn này vẽ ra một biểu diễn đồ thị dựa trên văn bản của lịch sử ở phía bên tay trái của đầu ra. Không sử dụng nếu bạn đang xem lịch sử cho một nhánh đơn.
 - `--all` - đưa ra lịch sử tất cả các nhánh.
 
 Dưới đây là những gì kết hợp các tùy chọn trông giống như
 
 ![image](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946444git-ninja-03.png)
 
-## 5. Không bao giờ theo dõi xót một commit
-Hãy nói bạn đã commit một điều gì đó mà bạn không muốn và kết thúc bằng cách cố gắng thiết lập
+## 5. Không bao giờ mất dấu một commit
+Giả sử bạn đã commit một điều gì đó mà bạn không muốn và kết thúc bằng cách cố gắng thiết lập
 lại trạng thái trước đó của bạn. Một lúc sau, bạn nhận ra đã mất một vài thông tin trong quá 
-trình và muốn quay lại hoặc ít nhất là xem nó. Đây là lúc `git reflog` có thể giúp.
+trình và muốn lấy lại nó hoặc ít nhất là xem nó. Đây là lúc `git reflog` có thể giúp.
 
 Đơn giản `git log` đưa cho bạn xem commit cuối, cha của nó, cha của cha nó, vân vân.
 Tuy nhiên, `git reflog` là một danh sách commit mà cái đứng đầu được chỉ đến. Nhớ rằng nó 
@@ -98,7 +95,7 @@ vậy, bạn có thể đẩy sự thay đổi vào một commit đơn. Nhưng c
   git add -p [file_name]
   ```
   Chúng ta hãy cùng nhau chứng minh. Tôi đã thêm ba dòng mới vào `file_name` và chỉ muốn 
-  dòng thứ nhất và thứ ba xuất hiện trong commit. Hãy xem `git diff` đưa ra chúng:
+  dòng thứ nhất và thứ ba xuất hiện trong commit. Hãy xem `git diff` đưa ra cho chúng ta những gì:
   
   ![img](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946449git-ninja-06.png)
   
@@ -125,11 +122,11 @@ vậy, bạn có thể đẩy sự thay đổi vào một commit đơn. Nhưng c
   
   ![img](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946454git-ninja-09.png)
   
-  ## 7. Nén nhiều commit
-  Khi bạn gửi đi code của bạn để xem lại và tạo một pull request(mà thường xảy ra trong các dự án nguồn mở )
+  ## 7. Tập hợp nhiều commit
+  Khi bạn gửi đi code của bạn để xem lại và tạo một pull request(mà thường thấy trong các dự án mã nguồn mở )
   bạn có thể được yêu cầu thực hiện thay đổi cho mã của mình trước khi nó được chấp nhận.
   Bạn thực hiện thay đổi, chỉ để được yêu cầu thay đổi lại nó trong lần xem xét tiếp theo.
-  Trước khi bạn biết điều đó, bạn có một vài commit thêm. Lý tưởng nhất, bạn có thể nén chúng vào 
+  Trước khi bạn biết điều đó, bạn có thêm một vài commit bổ sung. Lý tưởng nhất, bạn có thể nén chúng vào 
   một bằng cách sử dụng lệnh `rebase`.
   
   ```
@@ -146,17 +143,17 @@ vậy, bạn có thể đẩy sự thay đổi vào một commit đơn. Nhưng c
   
   ![img](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946455git-ninja-10.png)
   
-  Sau đó bạn được yêu cầu cung cấp thông báo commit cho commit mới. Quá trình này chủ yếu viết 
+  Sau đó bạn được yêu cầu cung cấp thông báo commit cho commit mới. Bản chất của Quá trình này chủ yếu là viết 
   lại lịch sử commit của bạn.
   
   ![img](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946457git-ninja-11.png)
   
   ## 8. Cất những thay đổi chưa được commit
-  Hãy nói rằng bạn đang làm việc với một lỗi nhất định và một tính năng, và bạn
+  Giả sử bạn đang làm việc với một lỗi hay một tính năng nhất định, và bạn
   đột nhiên được yêu cầu mô tả công việc của bạn. Công việc hiện tại chưa đủ hoàn thiện
   để commit, và bạn không thể đưa ra một mô tả trong giai đoạn này(mà không cần quay lại
-  các thay đổi). Trong trường hợp như vậy, `git stash` trở thành cứu tinh. Stash thực sự có tất cả các thay đổi của bạn 
-  và lưu trữ chúng để sử dụng thêm. Để giấu các thay đổi của bạn, bạn chỉ cần chạy lệnh sau
+  các thay đổi). Trong trường hợp như vậy, `git stash` trở thành cứu tinh. Stash lấy tất cả các thay đổi của bạn 
+  và lưu trữ chúng để sử dụng lại. Để giấu các thay đổi của bạn, bạn chỉ cần chạy lệnh sau
   
   ```
  git stash 
@@ -170,7 +167,7 @@ vậy, bạn có thể đẩy sự thay đổi vào một commit đơn. Nhưng c
  
  ![img](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946458git-ninja-12.png)
  
- Nếu bạn muốn un-stash và phục hồi các thay đổi không bị giam, bạn áp dụng các stash:
+ Nếu bạn muốn un-stash và phục hồi các thay đổi chưa được commit, bạn áp dụng lệnh:
  
  ```
  git stash apply
@@ -199,10 +196,10 @@ git stash apply stash@{2}
 bằng cách chạy `git show [commit_hash]` hoặc khôi phục lại nó bằng cách chạy `git merge [commit_hash]`.
 
 `git fsck` có một lợi thế hơn `reflog`. Hãy nói răng bạn đã xóa một remove branch và sau đó
-clone repo. Với `fsck` bạn có thể tìm khôi phục lại remove branch đã xóa.
+clone repo. Với `fsck` bạn có thể tìm khôi phục lại branch đã xóa.
 
 ## 10. Cherry Pick
-Cuối cùng tôi đã lưu lại các câu lệnh Git tao nhã nhất. Câu lệnh ```cherry-pick` là câu lệnh Git ưa thích nhất của tôi, bởi vì ý nghĩa thực cũng như tính hữu dụng của nó!
+Cuối cùng tôi đã lưu lại các câu lệnh Git tao nhã nhất. Câu lệnh ```cherry-pick``` là câu lệnh Git ưa thích nhất của tôi, bởi vì ý nghĩa thực cũng như tính hữu dụng của nó!
 
 Với những giới hạn đơn giản nhất, ```cherry-pick``` sẽ chọn 1 commit đơn lẻ từ các nhánh khác nhau và hợp chúng với cái hiện tại. Nếu bạn đang làm việc theo cách song sóng trên 2 hay nhiều hơn nhánh, bạn có thể chú ý 1 lỗi mà xuất hiện ở tất cả các nhánh. Nếu bạn giải quyết nó trong 1, bạn có thể cherry pick commit đến cácnhánh khác, mà không làm rỗi loạn với các file hay commit khác
 
@@ -219,7 +216,7 @@ git cherry-pick [commit_hash]
 
 ![img](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946467git-ninja-16.png)
 
-Mặc dù lần này tôi đã dọn ```cherry-pick```, bạn nên biết rằng cây lệnh này thường dẫn tới các xung đột, vì vậy sử dụng nó cẩn thận.
+Mặc dù lần này tôi đã dọn ```cherry-pick```, bạn nên biết rằng câu lệnh này thường dẫn tới các xung đột, vì vậy hãy sử dụng nó cẩn thận.
 
 ## Kết luận
 
