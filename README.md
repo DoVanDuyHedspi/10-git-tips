@@ -5,7 +5,7 @@ trong thế giới Git. Trong bài đăng này, chúng ta cố gắng để khá
 giời gian của bạn hiệu quả và tận dụng các tính năng mà git cung cấp.
 
 Chú ý: Một vài câu lệnh trong bài báo này có một phần nằm trong dấu ngoặc vuông (ví dụ `git add -p [file_name]`).
-Trong những ví dụ, bạn sẽ chèn số, định danh,.. cần thiền ở ngoài dấu ngoặc vuông.
+Trong những ví dụ, bạn sẽ chèn số, định danh,.. cần thiết ~~ở ngoài dấu~~ **không đi kèm** ngoặc vuông.
 ## 1. Git tự hoàn thiện
 Nếu bạn chạy câu lệnh Git thông qua dòng lệnh, thì đó là một nhiệm vụ mệt mỏi để gõ các lệnh
 bằng tay mỗi lần. Để giúp đỡ điều đó, bạn có thể kích hoạt tự động hoàn thành các lệnh Git trong
@@ -204,13 +204,13 @@ clone repo. Với `fsck` bạn có thể tìm khôi phục lại remove branch �
 ## 10. Cherry Pick
 Cuối cùng tôi đã lưu lại các câu lệnh Git tao nhã nhất. Câu lệnh ```cherry-pick` là câu lệnh Git ưa thích nhất của tôi, bởi vì ý nghĩa thực cũng như tính hữu dụng của nó!
 
-Với những giới hạn đơn giản nhất, ```cherry-pick``` sẽ chọn 1 commit đơn lẻ từ các nhánh khác nhau và hợp chúng với cái hiện tại. Nếu bạn đang làm việc theo cách song sóng trên 2 hay nhiều hơn nhánh, bạn có thể chú ý 1 lỗi mà xuất hiện ở tất cả các nhánh. Nếu bạn giải quyết nó trong 1, bạn có thể cherry pick commit đến cácnhánh khác, mà không làm rỗi loạn với các file hay commit khác
+Với những giới hạn đơn giản nhất, ```cherry-pick``` sẽ chọn 1 commit đơn lẻ từ các nhánh khác nhau và hợp chúng với cái hiện tại. Nếu bạn đang làm việc theo cách song song trên 2 hay nhiều hơn nhánh, bạn có thể ~~chú ý~~ **tồn tai** 1 lỗi mà xuất hiện ở tất cả các nhánh. Nếu bạn giải quyết nó trong 1, bạn có thể cherry pick commit đến cácnhánh khác, mà không làm ~~rỗi loạn~~ **ảnh hưởng** với các file hay commit khác
 
 
 Hãy hình dung 1 kịch bản khi bạn có thể gọi nó. Tôi có 2 nhánh và tôi muốn ```cherry-pick``` commi ts```b20fd14: Cleaned junk``` đến 1 nhánh khác
 ![img](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1402946465git-ninja-15.png)
 
-Tôi chuyển tới nhánh tới nhánh tôi muốn ```cherry-pick``` commit, và chạy lệnh sau
+Tôi chuyển tới nhánh tôi muốn ```cherry-pick``` commit, và chạy lệnh sau
 ```
 
 git cherry-pick [commit_hash]
@@ -223,5 +223,5 @@ Mặc dù lần này tôi đã dọn ```cherry-pick```, bạn nên biết rằng
 
 ## Kết luận
 
-Với những điều này, chúng tôi đi đến kết luận của danh sách các lời khuyên của chúng tôi mà tôi nghĩ rằng có thể giúp bạn nâng tầm các kĩ năng Git của ban. Git là thứ tốt nhất ngoài đó và nó có thể  hoàn thành bất cứ thứ gì mà bạn có thể tưởng tượng. Vìì thế, hãy luốn cố gắng thách thức bản thân với Git. Cơ hội đến, bạn sẽ có thể học được điều gì đó mới mẻ!
+Với những điều này, chúng tôi đi đến kết luận của danh sách các lời khuyên của chúng tôi mà tôi nghĩ rằng có thể giúp bạn nâng tầm các kĩ năng Git của ban. Git là thứ tốt nhất ngoài đó và nó có thể  hoàn thành bất cứ thứ gì mà bạn có thể tưởng tượng. Vìì thế, hãy luốn cố gắng thách thức bản thân với Git. ~~Cơ hội đến~~ **Rất có thể**, bạn sẽ có thể học được điều gì đó mới mẻ!
 
